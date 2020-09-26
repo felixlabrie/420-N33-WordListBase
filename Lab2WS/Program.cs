@@ -12,22 +12,22 @@ namespace Lab2WS
         {
             try
             {
-                Console.WriteLine("Enter the scrambled words manually or as a file: f - file, m = manual");
+                Console.WriteLine(Constants.howTo);
 
-                string option = Console.ReadLine() ?? throw new Exception("String is null");
+                string option = Console.ReadLine() ?? throw new Exception(Constants.isNull);
 
                 switch (option.ToUpper())
                 {
                     case "F":
-                        Console.WriteLine("Enter the full path and filename >");
+                        Console.WriteLine(Constants.filePath);
                         ExecuteScrambledWordsInFileScenario();
                         break;
                     case "M":
-                        Console.WriteLine("Enter word(s) separated by a comma");
+                        Console.WriteLine(Constants.manEntry);
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
                     default:
-                        Console.WriteLine("The entered option was not recognized");
+                        Console.WriteLine(Constants.invEntry);
                         break;
                 }
 
@@ -37,7 +37,7 @@ namespace Lab2WS
             }
             catch (Exception e)
             {
-                Console.WriteLine("Sorry an error has occurred.. " + e.Message);
+                Console.WriteLine(Constants.error + e.Message);
             }
             
 
