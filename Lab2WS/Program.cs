@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Lab2WS
 {
@@ -54,6 +56,36 @@ namespace Lab2WS
         private static void ExecuteScrambledWordsManualEntryScenario()
         {
             // 1 get the user's input - comma separated string containing scrambled words
+            Console.WriteLine("Enter your words separated by a comma");
+        
+            string userInput = Console.ReadLine();
+            
+            WordMatcher matcher = new WordMatcher();
+            if (!File.Exists("wordlist.txt"))
+            {
+                Console.WriteLine("File does not exist");
+                return;
+            }
+            
+            
+            
+            string[] arrStrings =  File.ReadAllLines("worldlist.txt");
+            if (arrStrings.Length ==0 )
+            
+            {
+                Console.WriteLine("File is empty");
+                return;
+            }
+
+            string[] scrambledWords = userInput.Split(',');
+
+
+            List<MatchedWord> matchedWords = matcher.Match(scrambledWords, arrStrings);
+
+            foreach(MatchedWord word in matchedWords)
+            {
+                Console.WriteLine(word.ScrambledWord + " = " + word.Word);
+            }
             // 2 Extract the words into a string (red,blue,green) 
             // 3 Call the DisplayMatchedUnscrambledWords method passing the scrambled words string array
 
