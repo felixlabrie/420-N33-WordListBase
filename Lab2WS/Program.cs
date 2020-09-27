@@ -19,6 +19,8 @@ namespace Lab2WS
 
                 string option = Console.ReadLine() ?? throw new Exception(Constants.isNull);
 
+                do {
+                
                 switch (option.ToUpper())
                 {
                     case Constants.file:
@@ -34,8 +36,10 @@ namespace Lab2WS
                         break;
                 }
 
-                // Optional for now (when you have no loop)  (Take out when finished)
-                Console.ReadKey();
+                if (Console.ReadKey != Constants.file && Console.ReadKey != Constants.manual)
+                    {
+                        Console.WriteLine(Constants.howTo);
+                    }
 
             }
             catch (Exception e)
