@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Lab2WS
 {
@@ -56,20 +57,23 @@ namespace Lab2WS
         private static void ExecuteScrambledWordsManualEntryScenario()
         {
             // 1 get the user's input - comma separated string containing scrambled words
-            Console.WriteLine("Enter your words separated by a comma");
+            
         
             string userInput = Console.ReadLine();
             
             WordMatcher matcher = new WordMatcher();
-            if (!File.Exists("wordlist.txt"))
+            var thisExeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string filePath = Path.Combine(thisExeDirectory, "wordlist.txt");
+            if (!File.Exists(filePath))
             {
                 Console.WriteLine("File does not exist");
                 return;
             }
+
+
+            FileReader reader = new FileReader();
+            string[] arrStrings = reader.Read(filePath);
             
-            
-            
-            string[] arrStrings =  File.ReadAllLines("worldlist.txt");
             if (arrStrings.Length ==0 )
             
             {
