@@ -15,36 +15,33 @@ namespace Lab2WS
         {
             try
             {
-                Console.WriteLine(Constants.howTo);
+                Console.WriteLine(Constants.HOWTO);
 
-                string option = Console.ReadLine() ?? throw new Exception(Constants.isNull);
+                string option = Console.ReadLine() ?? throw new Exception(Constants.ISNULL);
 
-                do {
-                
+
+
                 switch (option.ToUpper())
                 {
-                    case Constants.file:
-                        Console.WriteLine(Constants.filePath);
+                    case Constants.FILE:
+                        Console.WriteLine(Constants.FILEPATH);
                         ExecuteScrambledWordsInFileScenario();
                         break;
-                    case Constants.manual:
-                        Console.WriteLine(Constants.manEntry);
+                    case Constants.MANUAL:
+                        Console.WriteLine(Constants.MANENTRY);
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
                     default:
-                        Console.WriteLine(Constants.invEntry);
+                        Console.WriteLine(Constants.INVENTRY);
                         break;
                 }
 
-                if (Console.ReadKey != Constants.file && Console.ReadKey != Constants.manual)
-                    {
-                        Console.WriteLine(Constants.howTo);
-                    }
+                Console.ReadKey();
 
             }
             catch (Exception e)
             {
-                Console.WriteLine(Constants.error + e.Message);
+                Console.WriteLine(Constants.ERROR + e.Message);
             }
             
 
