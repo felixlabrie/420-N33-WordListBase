@@ -56,9 +56,7 @@ namespace Lab2WS
 
         private static void ExecuteScrambledWordsManualEntryScenario()
         {
-            // 1 get the user's input - comma separated string containing scrambled words
             
-        
             string userInput = Console.ReadLine();
             
             WordMatcher matcher = new WordMatcher();
@@ -90,7 +88,7 @@ namespace Lab2WS
             {
                 Console.WriteLine(word.ScrambledWord + " = " + word.Word);
             }
-            // 2 Extract the words into a string (red,blue,green) 
+            
             // 3 Call the DisplayMatchedUnscrambledWords method passing the scrambled words string array
 
         }
