@@ -16,5 +16,8 @@ namespace Lab2WS
         public const string manEntry = "Enter word(s) separated by a comma";
         public const string invEntry = "The entered option was not recognized";
         public const string error = "Sorry an error has occurred.. ";
+        public const string file = "F";
+        public const string manual = "M";
+        public const string 
     }
 }

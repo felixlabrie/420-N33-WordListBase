@@ -20,11 +20,11 @@ namespace Lab2WS
 
                 switch (option.ToUpper())
                 {
-                    case "F":
+                    case Constants.file:
                         Console.WriteLine(Constants.filePath);
                         ExecuteScrambledWordsInFileScenario();
                         break;
-                    case "M":
+                    case Constants.manual:
                         Console.WriteLine(Constants.manEntry);
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
